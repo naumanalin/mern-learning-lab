@@ -7,40 +7,12 @@ const BMICalculator = () => {
   const [gender, setGender] = useState("");
   const [bmi, setBmi] = useState("");
 
-  // ------------ test toast ----------------
-  useEffect(()=>{
-    if(1 > 0){
-        toast.error('🦄 Wow so easy!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-            });
-    }
-}, [])
-  // ------------ end test toast -----------
 
   const calculateBMI = (e) => {
     e.preventDefault();
 
     if (!height || !weight || !gender) {
-      // toast.error("Please enter valid height, weight and gender.");
-      toast.error('🦄 Please enter valid height, weight and gender.!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-        });
+      toast.error("Please enter valid height, weight and gender.");
       return;
     }
 
@@ -60,20 +32,9 @@ const BMICalculator = () => {
         "You are overweight. Consider seeking advice from a healthcare provider."
       );
     } else {
-      // toast.error(
-      //   "You are in the obese range. It is recommended to seek advice from a healthcare specialist."
-      // );
-      toast.error('🦄 Wow so easy!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-        });
+      toast.error(
+        "You are in the obese range. It is recommended to seek advice from a healthcare specialist."
+      );
     }
   };
 

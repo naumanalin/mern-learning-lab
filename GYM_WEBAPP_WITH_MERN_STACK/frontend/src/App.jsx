@@ -1,6 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+
 import Hero from './components/Hero';
 import WorkoutSection from './components/WorkoutSection';
 import Gallery from './components/Gallery';
