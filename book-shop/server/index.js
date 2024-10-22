@@ -45,4 +45,5 @@ app.use('/user', userRoutes)
 
 // app.listen(PORT, ()=>console.log(`SERVER is live at Port: ${PORT}`))
 
-module.exports = app;
+export default something;
+
