@@ -16,16 +16,19 @@ app.use(express.urlencoded({extends:true}))
 
 dotenv.config();
 const PORT = process.env.PORT || 8080;
-const URI = process.env.MongoDB_URI;
+const URI = process.env.MongoDB_URI
 
 
 // connect to mongoDB
-try {
-    mongoose.connect(URI);
-    console.log("MongoDB is Connected");
-} catch (error) {
-    console.log("MongoDB Error: ", error);
-}
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch(err => {
+    console.error("MongoDB Connection Error:", err);
+    process.exit(1); // Exit process if connection fails
+  });
+
 
 
 
