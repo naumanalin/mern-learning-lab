@@ -2,20 +2,23 @@ import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import book from "../allBooks.json"
 function Course() {
-  const [book, setBook] = useState([]);
-  useEffect(() => {
-    const getBook = async () => {
-      try {
-        const res = await axios.get("http://localhost:8000/books/");
-        console.log(res.data);
-        setBook(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getBook();
-  }, []);
+  // -------------- with API --------------------------------
+  // const [book, setBook] = useState([]);
+  // useEffect(() => {
+  //   const getBook = async () => {
+  //     try {
+  //       const res = await axios.get("http://localhost:8000/books/");
+  //       console.log(res.data);
+  //       setBook(res.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getBook();
+  // }, []);
+  //  ---------------- with out API (Delete After deploy) ----------------
   return (
     <>
       <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">

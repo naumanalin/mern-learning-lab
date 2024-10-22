@@ -3,21 +3,21 @@
 
 # Message 
 
-POST: http://localhost:8000/api/message/send  --> Public
+POST: http://localhost:8000/api/message/send  --> Public ✅️
 GET: http://localhost:8000/api/message/allMessages   --> Admin Protected 
 
 
 # FrontEnd
 
-patient registration: POST: http://localhost:8000/api/user/patient/registration --> Public
-Get All Doctors: GET: http://localhost:8000/api/user/doctors --> Public
+patient registration: POST: http://localhost:8000/api/user/patient/registration --> Public ✅️
+Get All Doctors: GET: http://localhost:8000/api/user/doctors --> Public ✅️
 
 # Appointment
-test route: GET: http://localhost:8000/api/appointment
-Add New Appointment: POST: http://localhost:8000/api/appointment/addNewAppointment --> Patient Login Protected
-Add New Appointment: GET: http://localhost:8000/api/appointment/getall/appointments --> Admin Protected
-Add New Appointment: PUT: http://localhost:8000/api/appointment/update/:id --> Admin Protected
-Add New Appointment: DELETE: http://localhost:8000/api/appointment/delete/:id --> Admin Protected
+test route: GET: http://localhost:8000/api/appointment ✅️
+Add New Appointment: POST: http://localhost:8000/api/appointment/addNewAppointment --> Patient Login Protected ✅️
+Get All Appointment: GET: http://localhost:8000/api/appointment/getall/appointments --> Admin Protected
+Update Appointment: PUT: http://localhost:8000/api/appointment/update/:id --> Admin Protected
+Delete Appointment: DELETE: http://localhost:8000/api/appointment/delete/:id --> Admin Protected
 
 # Dashboard
 Add new Admin:  POST: http://localhost:8000/api/user/admin/newadmin  --> Admin Protected Route
@@ -25,15 +25,15 @@ Add new Doctor: POST: http://localhost:8000/api/user/doctor/addNew   --> Admin P
 
 
 # Login, 
-POST:  http://localhost:8000/api/user/login  --> Public for ALL (patient, admin, doctor) note: send role from login form
+POST:  http://localhost:8000/api/user/login  --> ✅️ Public for ALL (patient, admin, doctor) note: send role from login form
 
 # Logged User Details
 GET: http://localhost:8000/api/user/loggedAdmin/details  --> Admin Protected
-GET: http://localhost:8000/api/user/loggedPatient/details --> Patient Protected
+GET: http://localhost:8000/api/user/loggedPatient/details --> Patient Protected ✅️
 
 # Logout
-GET: http://localhost:8000/api/user/patient/logout --> Admin Protected
-GET: http://localhost:8000/api/user/admin/logout --> Patient Protected
+GET: http://localhost:8000/api/user/patient/logout --> Patient Protected ✅️
+GET: http://localhost:8000/api/user/admin/logout --> Admin Protected
 
 
 

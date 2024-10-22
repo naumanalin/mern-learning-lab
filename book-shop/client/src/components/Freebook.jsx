@@ -4,25 +4,34 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import axios from "axios";
 import Cards from "./Cards";
-
+import bookData from "../allBooks.json"
 
 function Freebook() {
-
   const [book, setBook] = useState([]);
-  useEffect(() => {
-    const getBook = async () => {
-      try {
-        const res = await axios.get("http://localhost:8000/books/");
 
-        const data = res.data.filter((data) => data.category === "free");
-        console.log(data);
-        setBook(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getBook();
-  }, []);
+  //  ------------------------ with API ------------------
+  // useEffect(() => {
+  //   const getBook = async () => {
+  //     try {
+  //       const res = await axios.get("http://localhost:8000/books/");
+
+  //       const data = res.data.filter((data) => data.category === "free");
+  //       console.log(data);
+  //       setBook(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   getBook();
+  // }, []);
+
+// --------------------- With out API Delete after testing and deploying on vercel --------------------
+
+useEffect(() => {
+  const freeBooks = bookData.filter((data) => data.category === "free");
+  setBook(freeBooks);
+}, []);
+
 
   var settings = {
     dots: true,
@@ -72,7 +81,7 @@ function Freebook() {
 
         <div>
           <Slider {...settings}>
-            {book.map((item) => (
+            {book && book.map((item) => (
               <Cards item={item} key={item.id} />
             ))}
           </Slider>
