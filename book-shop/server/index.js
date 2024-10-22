@@ -40,4 +40,6 @@ app.use('/user', userRoutes)
 
 
 
-app.listen(PORT, ()=>console.log(`SERVER is live at Port: ${PORT}`))
+// app.listen(PORT, ()=>console.log(`SERVER is live at Port: ${PORT}`))
+
+module.exports = app;
